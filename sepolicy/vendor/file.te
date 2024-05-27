@@ -21,3 +21,4 @@ type sysfs_kprofiles, sysfs_type, fs_type;
 
 type diag_device, data_file_type, file_type;
 type proc_mtd, data_file_type, file_type;
+type sysfs_torch, fs_type, sysfs_type;
