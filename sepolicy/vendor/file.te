@@ -18,3 +18,5 @@ type sysfs_tp_virtual_htsr, sysfs_type, fs_type;
 
 # KProfiles
 type sysfs_kprofiles, sysfs_type, fs_type;
+
+type diag_device, data_file_type, file_type;
