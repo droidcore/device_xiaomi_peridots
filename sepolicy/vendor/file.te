@@ -15,3 +15,6 @@ type vendor_ins_vendor_data_file, data_file_type, file_type;
 type vendor_sysfs_msm_subsys, fs_type, sysfs_type;
 
 type sysfs_tp_virtual_htsr, sysfs_type, fs_type;
+
+# KProfiles
+type sysfs_kprofiles, sysfs_type, fs_type;
