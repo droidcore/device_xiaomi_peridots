@@ -223,8 +223,11 @@ on post-fs-data
     chmod 0664 /sys/class/leds/led:switch_2/trigger
     chmod 0664 /sys/class/leds/led:switch_3/trigger
     chmod 0664 /sys/class/leds/flashlight/brightness
-    
-    #QCC mode configuration
+
+    write /sys/class/leds/led:torch_0/brightness 0
+    write /sys/class/leds/led:torch_1/brightness 0
+
+    # QCC mode configuration
     setprop vendor.qti.qcc.oper.mode 4 
 
 #Enable WLAN SSR recovery
