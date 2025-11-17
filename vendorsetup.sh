@@ -42,7 +42,7 @@ git clone https://github.com/droidcore/packages_apps_Settings.git packages/apps/
 # system sepolicy 
 echo "Cloning Custom system sepolicy tree..."
 rm -rf system/sepolicy
-git clone https://github.com/droidcore/system_sepolicy.git system/sepolicy
+git clone https://github.com/droidcore/mica_system_sepolicy.git system/sepolicy
 
 # Viper4Android 
 echo "Cloning Viper4Android tree..."
