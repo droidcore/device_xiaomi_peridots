@@ -20,6 +20,45 @@ vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera
 # Disable vsync for cpu rendered apps
 debug.cpurend.vsync=false
 
+# IMS
+persist.dbg.ims_volte_enable=1
+persist.dbg.volte_avail_ovr=1
+persist.dbg.vt_avail_ovr=1
+persist.dbg.wfc_avail_ovr=1
+
+# Logging
+persist.vendor.camera.logInfoMask=false
+persist.log.tag.ACDB-LOADER=S
+persist.log.tag.CVP=S
+persist.log.tag.ResourcesCompat=S
+persist.log.tag.SYNX-UMD=S
+persist.log.tag.libsensor-parseRGB=S
+persist.log.tag.PowerUI=S
+persist.log.tag.BackgroundInstallControlService=S
+persist.log.tag.HWUI=S
+persist.log.tag.NetworkStack=S
+persist.log.tag.ConnectivityService=S
+persist.log.tag.Bluetooth=S
+persist.log.tag.btif=S
+persist.log.tag.bluetooth_sco=S
+persist.log.tag.SensorService=S
+persist.log.tag.SensorManager=S
+persist.log.tag.PowerManagerService=S
+persist.log.tag.BatteryService=S
+persist.log.tag.SystemServer=S
+persist.log.tag.AppOps=S
+
+# LMK
+ro.config.low_ram=false
+
+# minksocket
+persist.log.tag.minksocket=S
+
+# Media
+media.stagefright.thumbnail.prefer_hw_codecs=true
+ro.media.recorder-max-base-layer-fps=60
+ro.media.xml_variant.profiles=_cliffs_v0
+
 # Radio VoNR Calling
 persist.rcs.supported=1
 persist.radio.is_vonr_enabled_0=true
