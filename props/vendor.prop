@@ -40,6 +40,9 @@ vendor.audio_hal.period_size=192
 vendor.qc2audio.per_frame.flac.dec.enabled=true
 vendor.qc2audio.suspend.enabled=true
 
+# Adaptive Suspend
+suspend.short_suspend_threshold_millis=5000
+
 # Bluetooth
 bluetooth.profile.a2dp.source.enabled=true
 bluetooth.profile.asha.central.enabled=true
@@ -106,26 +109,30 @@ persist.backup.ntpServer=0.pool.ntp.org
 # Graphics
 debug.angle.feature_overrides_enabled=preferLinearFilterForYUV:mapUnspecifiedColorSpaceToPassThrough
 debug.egl.hw=0
+debug.renderengine.backend=skiavkthreaded
 debug.sf.auto_latch_unsignaled=0
+debug.hwui.skia_tracing_enabled=false
+debug.hwui.skia_use_perfetto_track_events=false
 debug.sf.disable_client_composition_cache=0
-debug.sf.early.app.duration=16600000
-debug.sf.early.sf.duration=16600000
-debug.sf.earlyGl.app.duration=16600000
-debug.sf.earlyGl.sf.duration=16600000
-debug.sf.enable_gl_backpressure=1
+debug.sf.enable_gl_backpressure=0
 debug.sf.enable_transaction_tracing=false
 debug.sf.frame_rate_multiple_threshold=120
 debug.sf.hw=0
+debug.sf.hwc.min.duration=8400000
 debug.sf.late.app.duration=16600000
 debug.sf.late.sf.duration=10500000
 debug.sf.predict_hwc_composition_strategy=0
 debug.sf.treat_170m_as_sRGB=1
+debug.sf.region_sampling_timer_timeout_ns=200000000
+debug.sf.region_sampling_period_ns=200000000
 debug.sf.use_phase_offsets_as_durations=1
 graphics.gpu.profiler.support=true
 persist.sys.sf.color_mode=0
 persist.sys.sf.color_saturation=1.0
 persist.sys.sf.native_mode=258
 ro.gfx.driver.1=com.qualcomm.qti.gpudrivers.pineapple.api34
+ro.egl.blobcache.multifile=true
+ro.egl.blobcache.multifile_limit=33554432
 ro.hardware.egl=adreno
 ro.hardware.vulkan=adreno
 ro.opengles.version=196610
@@ -146,6 +153,7 @@ ro.vendor.displayfeature.dump=true
 ro.vendor.display.ai_disp.enable=true
 ro.vendor.hbm_backlight.enable=true
 ro.surface_flinger.support_kernel_idle_timer=true
+ro.surface_flinger.uclamp.min=30
 vendor.display.comp_mask=0
 vendor.display.use_layer_ext=0
 vendor.display.use_smooth_motion=0
@@ -168,8 +176,26 @@ vendor.display.reserved_writeback_config=1
 vendor.display.scaling_dest_opt_mode=4
 vendor.display.scaling_source_opt_mode=4
 vendor.display.vds_allow_hwc=1
+vendor.display.override_doze_mode=1
 vendor.gralloc.disable_ubwc=0
 vendor.gralloc.enable_logs=0
+ro.config.avoid_gfx_accel=true
+
+# HWUI
+debug.hwui.use_hint_manager=true
+debug.sf.enable_adpf_cpu_hint=true
+debug.hwui.target_cpu_time_percent=10
+ro.hwui.texture_cache_size=72 
+ro.hwui.layer_cache_size=48 
+ro.hwui.r_buffer_cache_size=8 
+ro.hwui.path_cache_size=32 
+ro.hwui.gradient_cache_size=1 
+ro.hwui.drop_shadow_cache_size=6 
+ro.hwui.texture_cache_flushrate=0.4 
+ro.hwui.text_small_cache_width=1024 
+ro.hwui.text_small_cache_height=1024 
+ro.hwui.text_large_cache_width=2048 
+ro.hwui.text_large_cache_height=2048
 
 # Incremental
 ro.incremental.enable=yes
@@ -185,6 +211,8 @@ debug.stagefright.c2inputsurface=-1
 
 # Media configs
 ro.media.xml_variant.profiles=_cliffs_v0
+ro.media.xml_variant.codecs=_cliffs_v0
+ro.media.xml_variant.codecs_performance=_cliffs_v0
 vendor.mm.target.enable.qcom_parser=524304
 vendor.media.target_variant=_cliffs_v0
 vendor.netflix.bsp_rev=Q8635-38577-1
@@ -196,7 +224,6 @@ persist.sys.perf.scroll_opt.heavy_app=1
 # Power
 ro.vendor.extension_library=libqti-perfd-client.so
 ro.vendor.perf.scroll_opt=1
-debug.sf.enable_adpf_cpu_hint=true
 vendor.perf.framepacing.enable=1
 
 # QCOM
@@ -251,3 +278,6 @@ ro.config.vc_call_vol_steps=11
 
 # WLAN
 wifi.aware.interface=wifi-aware0
+
+# Zygote
+ro.zygote.disable_gl_preload=1

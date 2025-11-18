@@ -98,7 +98,6 @@ ODM_MANIFEST_FILES := $(DEVICE_PATH)/configs/hidl/manifest_odm.xml
 
 # Inherit from proprietary files for miuicamera
 -include device/xiaomi/peridot-miuicamera/BoardConfig.mk
-CAMERA_PACKAGE_NAME := com.android.camera
 
 # Kernel
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
@@ -187,18 +186,7 @@ TARGET_KERNEL_EXT_MODULES := \
 CAMERA_PACKAGE_NAME := com.android.camera
 
 # Partitions
-ifneq ($(WITH_GMS),true)
 -include vendor/lineage/config/BoardConfigReservedSize.mk
-ifeq ($(BOARD_PRODUCTIMAGE_MINIMAL_PARTITION_RESERVED_SIZE),true)
-BOARD_PRODUCTIMAGE_PARTITION_RESERVED_SIZE ?= 1188036608
-else
-BOARD_PRODUCTIMAGE_PARTITION_RESERVED_SIZE ?= 1957691392
-endif
-BOARD_SYSTEMIMAGE_EXTFS_INODE_COUNT ?= -1
-BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE ?= 94371840
-BOARD_SYSTEM_EXTIMAGE_EXTFS_INODE_COUNT ?= -1
-BOARD_SYSTEM_EXTIMAGE_PARTITION_RESERVED_SIZE ?= 94371840
-endif
 
 BOARD_BOOTIMAGE_PARTITION_SIZE := 100663296
 BOARD_DTBOIMG_PARTITION_SIZE := 25165824
@@ -239,10 +227,6 @@ TARGET_ODM_PROP += $(DEVICE_PATH)/props/odm.prop
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/props/product.prop
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/props/system.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/props/vendor.prop
-
-# MiuiCamera
-CAMERA_PACKAGE_NAME := com.android.camera
--include device/xiaomi/peridot-miuicamera/BoardConfig.mk
 
 # Recovery
 $(call soong_config_set, ufsbsg, ufsframework, bsg)

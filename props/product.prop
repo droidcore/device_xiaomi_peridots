@@ -61,3 +61,6 @@ ro.lmk.filecache_min_kb=131072
 ro.lmk.stall_limit_critical=3
 ro.config.low_ram=false
 ro.config.per_app_memcg=true
+
+# Disable RescueParty due to high risk of data loss
+persist.sys.disable_rescue=true
