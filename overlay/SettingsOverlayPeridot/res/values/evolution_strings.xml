@@ -1,0 +1,10 @@
+<!-- 
+     Copyright (C) 2024 Evolution X
+     SPDX-License-Identifier: Apache-2.0
+ -->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<!--  About device screen, build maintainer  -->
+<string name="build_maintainer_summary">BLU</string>
+<string name="build_maintainer_donate_url">m</string>
+</resources>
+
