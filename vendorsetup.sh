@@ -52,6 +52,7 @@ git clone https://github.com/TogoFire/packages_apps_ViPER4AndroidFX.git packages
 # Gamebar
 echo "Cloning Gamebar tree..."
 rm -rf packages/apps/GameBar
+git clone https://github.com/droidcore/packages_apps_GameBar.git packages/apps/GameBar
 
 # KProfiles (fresh clone)
 echo "Cloning KProfiles..."
