@@ -22,7 +22,8 @@ git clone -b lineage-23.0 https://github.com/PeridotSupremacy/hardware_xiaomi.gi
 
 # Packages Apps XiaomiDolby
 echo "Cloning XiaomiDolby tree..."
-rm -rf packages/apps/XiaomiDolby
+rm -rf device/qcom/sepolicy_vndr/sm8650
+git clone https://github.com/droidcore/androids_device_qcom_sepolicy_vndr.git device/qcom/sepolicy_vndr/sm8650
 
 # MiuiCamera device tree (fresh clone)
 echo "Cloning MiuiCamera device tree..."
@@ -33,16 +34,6 @@ git clone https://github.com/F6-test/device_xiaomi_peridot-miuicamera.git device
 echo "Cloning MiuiCamera vendor tree..."
 rm -rf vendor/xiaomi/peridot-miuicamera
 git clone https://github.com/F6-test/vendor-xiaomi-peridot-miuicamera.git vendor/xiaomi/peridot-miuicamera
-
-# Packages Apps Settings
-echo "Cloning Custom Apps Settings tree..."
-rm -rf packages/apps/Settings
-git clone https://github.com/droidcore/packages_apps_Settings.git packages/apps/Settings
-
-# system sepolicy 
-echo "Cloning Custom system sepolicy tree..."
-rm -rf system/sepolicy
-git clone https://github.com/droidcore/system_sepolicy.git system/sepolicy
 
 # Viper4Android 
 echo "Cloning Viper4Android tree..."
