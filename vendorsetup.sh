@@ -22,7 +22,9 @@ git clone -b lineage-23.0 https://github.com/PeridotSupremacy/hardware_xiaomi.gi
 
 # Packages Apps XiaomiDolby
 echo "Cloning XiaomiDolby tree..."
-rm -rf packages/apps/XiaomiDolby
+rm -rf device/qcom/sepolicy_vndr/sm8650
+git clone https://github.com/droidcore/androids_device_qcom_sepolicy_vndr.git device/qcom/sepolicy_vndr/sm8650
+
 
 # MiuiCamera device tree (fresh clone)
 echo "Cloning MiuiCamera device tree..."
