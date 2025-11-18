@@ -36,11 +36,6 @@ echo "Cloning MiuiCamera vendor tree..."
 rm -rf vendor/xiaomi/peridot-miuicamera
 git clone https://github.com/F6-test/vendor-xiaomi-peridot-miuicamera.git vendor/xiaomi/peridot-miuicamera
 
-# Packages Apps Settings
-echo "Cloning Custom Apps Settings tree..."
-rm -rf packages/apps/Settings
-git clone https://github.com/droidcore/packages_apps_Settings.git packages/apps/Settings
-
 # system sepolicy 
 echo "Cloning Custom system sepolicy tree..."
 rm -rf system/sepolicy
@@ -60,6 +55,12 @@ git clone https://github.com/droidcore/packages_apps_GameBar.git packages/apps/G
 echo "Cloning KProfiles..."
 rm -rf packages/apps/KProfiles
 git clone -b lineage-23.0 https://github.com/sm8635-dev/packages_apps_KProfiles.git packages/apps/KProfiles
+
+# Dtc (cherry pick...)
+echo "Feching dtc for peridot dtbo"
+cd external/dtc
+git fetch https://github.com/LineageOS/android_external_dtc lineage-23.0
+git reset --hard FETCH_HEAD
 
 # Refresh signing keys
 if [ -d vendor/lineage-priv/keys ]; then
