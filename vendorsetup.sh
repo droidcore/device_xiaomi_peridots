@@ -28,12 +28,12 @@ git clone https://github.com/droidcore/androids_device_qcom_sepolicy_vndr.git de
 # MiuiCamera device tree (fresh clone)
 echo "Cloning MiuiCamera device tree..."
 rm -rf device/xiaomi/peridot-miuicamera
-git clone https://github.com/F6-test/device_xiaomi_peridot-miuicamera.git device/xiaomi/peridot-miuicamera
+git clone https://github.com/peridot-hyperos-2/device_xiaomi_peridot-miuicamera.git device/xiaomi/peridot-miuicamera
 
 # MiuiCamera vendor tree (fresh clone)
 echo "Cloning MiuiCamera vendor tree..."
 rm -rf vendor/xiaomi/peridot-miuicamera
-git clone https://github.com/F6-test/vendor-xiaomi-peridot-miuicamera.git vendor/xiaomi/peridot-miuicamera
+git clone https://github.com/peridot-hyperos-2/vendor-xiaomi-peridot-miuicamera.git vendor/xiaomi/peridot-miuicamera
 
 # Viper4Android 
 echo "Cloning Viper4Android tree..."
@@ -57,6 +57,17 @@ if [ -d vendor/lineage-priv/keys ]; then
 fi
 echo "Cloning fresh signing keys..."
 git clone https://github.com/droidcore/priv-key.git -b main vendor/lineage-priv/keys
+
+# Fix deprecated camera override flag
+BOARD_CONFIG=device/xiaomi/peridot-miuicamera/BoardConfig.mk
+
+if grep -q "TARGET_CAMERA_OVERRIDE_FORMAT_FROM_RESERVED" "$BOARD_CONFIG"; then
+    echo "[PATCH] Fixing deprecated TARGET_CAMERA_OVERRIDE_FORMAT_FROM_RESERVED in $BOARD_CONFIG"
+
+    sed -i '/TARGET_CAMERA_OVERRIDE_FORMAT_FROM_RESERVED/d' "$BOARD_CONFIG"
+    
+    echo '$(call soong_config_set,camera,override_format_from_reserved,true)' >> "$BOARD_CONFIG"
+fi
 
 # Always back to root at the end
 if command -v croot &>/dev/null; then
