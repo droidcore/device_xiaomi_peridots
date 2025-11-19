@@ -40,11 +40,6 @@ echo "Cloning Viper4Android tree..."
 rm -rf packages/apps/ViPER4AndroidFX
 git clone https://github.com/TogoFire/packages_apps_ViPER4AndroidFX.git packages/apps/ViPER4AndroidFX
 
-# Gamebar
-echo "Cloning Gamebar tree..."
-rm -rf packages/apps/GameBar
-git clone https://github.com/droidcore/packages_apps_GameBar.git packages/apps/GameBar
-
 # KProfiles (fresh clone)
 echo "Cloning KProfiles..."
 rm -rf packages/apps/KProfiles
@@ -56,7 +51,7 @@ if [ -d vendor/lineage-priv/keys ]; then
   rm -rf vendor/lineage-priv/keys
 fi
 echo "Cloning fresh signing keys..."
-git clone https://github.com/droidcore/priv-key.git -b main vendor/lineage-priv/keys
+git clone https://github.com/droidcore/priv-key.git -b key vendor/lineage-priv/keys
 
 # Fix deprecated camera override flag
 BOARD_CONFIG=device/xiaomi/peridot-miuicamera/BoardConfig.mk
