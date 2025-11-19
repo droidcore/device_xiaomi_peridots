@@ -3,7 +3,7 @@
 # Vendor (fresh clone)
 echo "Cloning vendor tree..."
 rm -rf vendor/xiaomi/peridot
-git clone -b lineage-23.0 https://github.com/droidcore/vendor_xiaomi_peridots.git vendor/xiaomi/peridot
+git clone -b mica https://github.com/droidcore/vendor_xiaomi_peridots.git vendor/xiaomi/peridot
 
 # Kernel source (fresh clone)
 echo "Cloning kernel source tree..."
@@ -45,11 +45,6 @@ git clone https://github.com/droidcore/mica_system_sepolicy.git system/sepolicy
 echo "Cloning Viper4Android tree..."
 rm -rf packages/apps/ViPER4AndroidFX
 git clone https://github.com/TogoFire/packages_apps_ViPER4AndroidFX.git packages/apps/ViPER4AndroidFX
-
-# Gamebar
-echo "Cloning Gamebar tree..."
-rm -rf packages/apps/GameBar
-git clone https://github.com/droidcore/packages_apps_GameBar.git packages/apps/GameBar
 
 # KProfiles (fresh clone)
 echo "Cloning KProfiles..."
