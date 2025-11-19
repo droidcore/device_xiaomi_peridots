@@ -3,7 +3,7 @@
 # Vendor (fresh clone)
 echo "Cloning vendor tree..."
 rm -rf vendor/xiaomi/peridot
-git clone -b mica https://github.com/droidcore/vendor_xiaomi_peridots.git vendor/xiaomi/peridot
+git clone -b lineage-23.0 https://github.com/droidcore/vendor_xiaomi_peridots.git vendor/xiaomi/peridot
 
 # Kernel source (fresh clone)
 echo "Cloning kernel source tree..."
@@ -19,11 +19,6 @@ git clone -b lineage-23.0 --depth 1 https://github.com/peridot-dev/android_kerne
 echo "Cloning hardware xiaomi source..."
 rm -rf hardware/xiaomi
 git clone -b lineage-23.0 https://github.com/PeridotSupremacy/hardware_xiaomi.git hardware/xiaomi
-
-# Packages Apps XiaomiDolby
-echo "Cloning XiaomiDolby tree..."
-rm -rf device/qcom/sepolicy_vndr/sm8650
-git clone https://github.com/droidcore/androids_device_qcom_sepolicy_vndr.git device/qcom/sepolicy_vndr/sm8650
 
 
 # MiuiCamera device tree (fresh clone)
