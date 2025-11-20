@@ -19,7 +19,6 @@ from extract_utils.main import (
 
 namespace_imports = [
     'device/xiaomi/peridot',
-    'hardware/lineage/compat',
     'hardware/qcom-caf/sm8650',
     'hardware/qcom-caf/wlan',
     'hardware/qcom-caf/common/libqti-perfd-client',
@@ -78,13 +77,6 @@ blob_fixups: blob_fixups_user_type = {
         'odm/lib64/hw/com.qti.chi.override.so',
         'odm/lib64/libchifeature2.so',
     ): blob_fixup()
-        .add_needed('libprocessgroup_shim.so')
-        .replace_needed(
-            'android.hardware.graphics.allocator-V1-ndk.so',
-            'android.hardware.graphics.allocator-V2-ndk.so'
-    ),
-    'odm/lib64/hw/camera.xiaomi.so': blob_fixup()
-        .replace_needed('libui.so', 'libui-v34.so')
         .add_needed('libprocessgroup_shim.so')
         .replace_needed(
             'android.hardware.graphics.allocator-V1-ndk.so',

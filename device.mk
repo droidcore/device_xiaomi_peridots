@@ -23,9 +23,6 @@ $(call inherit-product, packages/modules/Virtualization/apex/product_packages.mk
 $(call soong_config_set,rfs,mpss_firmware_symlink_target,modem_firmware)
 $(call inherit-product, hardware/qcom-caf/common/common.mk)
 
-# MiuiCamera
-$(call inherit-product-if-exists, device/xiaomi/peridot-miuicamera/device.mk)
-
 # Viper4AndroidFX
 $(call inherit-product, packages/apps/ViPER4AndroidFX/config.mk)
 
@@ -188,9 +185,6 @@ PRODUCT_COPY_FILES += \
 # GNSS
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.location.gps.xml
-    
-# GameBar Performance Overlay
-$(call inherit-product, packages/apps/GameBar/gamebar.mk) 
 
 # Health
 PRODUCT_PACKAGES += \
