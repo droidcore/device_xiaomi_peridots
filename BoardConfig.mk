@@ -95,9 +95,6 @@ DEVICE_MANIFEST_FILE := \
 
 ODM_MANIFEST_FILES := $(DEVICE_PATH)/configs/hidl/manifest_odm.xml
 
-# Inherit from proprietary files for miuicamera
--include device/xiaomi/peridot-miuicamera/BoardConfig.mk
-
 # Kernel
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 TARGET_NEEDS_DTBOIMAGE := true
@@ -180,9 +177,6 @@ TARGET_KERNEL_EXT_MODULES := \
     qcom/opensource/mm-sys-kernel/ubwcp \
     qcom/opensource/touch-drivers \
     nxp/opensource/driver
-
-# MiuiCamera
-CAMERA_PACKAGE_NAME := com.android.camera
 
 # Partitions
 -include vendor/lineage/config/BoardConfigReservedSize.mk

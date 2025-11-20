@@ -25,16 +25,6 @@ echo "Cloning XiaomiDolby tree..."
 rm -rf device/qcom/sepolicy_vndr/sm8650
 git clone https://github.com/sm8635-dev/device_qcom_sepolicy_vndr.git device/qcom/sepolicy_vndr/sm8650
 
-# MiuiCamera device tree (fresh clone)
-echo "Cloning MiuiCamera device tree..."
-rm -rf device/xiaomi/peridot-miuicamera
-git clone https://github.com/F6-test/device_xiaomi_peridot-miuicamera.git device/xiaomi/peridot-miuicamera
-
-# MiuiCamera vendor tree (fresh clone)
-echo "Cloning MiuiCamera vendor tree..."
-rm -rf vendor/xiaomi/peridot-miuicamera
-git clone https://github.com/F6-test/vendor-xiaomi-peridot-miuicamera.git vendor/xiaomi/peridot-miuicamera
-
 # Viper4Android 
 echo "Cloning Viper4Android tree..."
 rm -rf packages/apps/ViPER4AndroidFX
