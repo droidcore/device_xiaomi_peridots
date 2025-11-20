@@ -38,7 +38,7 @@ git clone -b lineage-23.0 https://github.com/sm8635-dev/packages_apps_KProfiles.
 # Compat (cherry pick)
 echo "Fetching QPR1 compat..."
 cd hardware/lineage/compat
-git fetch https://github.com/stx-staging/android_hardware_statix_compat.git bp3a
+git fetch https://github.com/sm8635-dev/hardware_lineage_compat lineage-23.0
 git reset --hard FETCH_HEAD
 
 # Picking sepolicy for QPR1 (cherry pick)
